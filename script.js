@@ -65,9 +65,9 @@ Utilizar métodos de manejo del DOM
     - createAttribute()
     - createTextNode() */
 
-for (let i = 0; i < books.length; i++) {
+/* for (let i = 0; i < books.length; i++) {
     let div = document.createElement('div');
-    div.setAttribute("class", `div-number${i + 1}`);
+    div.setAttribute("class", `contenedorGrande`);
     document.querySelector("body").appendChild(div);
 
     let img = document.createElement('img');
@@ -76,7 +76,7 @@ for (let i = 0; i < books.length; i++) {
     img.src = "./" + books[i].imageLink;
 
     let parrafoContenedor = document.createElement('div');
-    parrafoContenedor.setAttribute("class", `contenedor`);
+    parrafoContenedor.setAttribute("class", `contenedorTexto`);
     div.appendChild(parrafoContenedor);
 
     let parrafo1 = document.createElement('p');
@@ -95,8 +95,9 @@ for (let i = 0; i < books.length; i++) {
     parrafo3.appendChild(txt3);
 
     let parrafo4 = document.createElement('a');
+    parrafo4.setAttribute("src",`${books[i].link}`);
     parrafoContenedor.appendChild(parrafo4);
-    let txt4 = document.createTextNode(`link: ${books[i].link}`);
+    let txt4 = document.createTextNode(`${books[i].link}`);
     parrafo4.appendChild(txt4);
 
     let parrafo5 = document.createElement('p');
@@ -113,7 +114,7 @@ for (let i = 0; i < books.length; i++) {
     parrafoContenedor.appendChild(parrafo7);
     let txt7 = document.createTextNode(`year: ${books[i].year}`);
     parrafo7.appendChild(txt7);
-}
+} */
 
 
 /*Fase 2
@@ -121,15 +122,15 @@ Utilizar template string*/
 
 let cards = "";
 for (let i = 0; i < books.length; i++) {
-    cards += `<div>
+    cards += `<div class="contenedorGrande">
                 <img src="./${books[i].imageLink}" ></img>
-                <div class="contenedor">
-                  <p>${books[i].author}</p>
-                  <p>${books[i].country}</p>
-                  <a href="${books[i].link}">${books[i].link}</a>
-                  <p>${books[i].pages}</p>
-                  <p>${books[i].title}</p>
-                  <p>${books[i].year}</p>
+                <div class="contenedorTexto">
+                  <p>Author: ${books[i].author}</p>
+                  <p>País: ${books[i].country}</p>
+                  <p>Enlace: <a href="${books[i].link}">${books[i].link}</a></p>
+                  <p>Páginas: ${books[i].pages}</p>
+                  <p>Título: ${books[i].title}</p>
+                  <p>Año: ${books[i].year}</p>
                 </div>
               </div>`
     console.log();
