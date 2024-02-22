@@ -122,18 +122,18 @@ Utilizar template string*/
 
 let cards = "";
 for (let i = 0; i < books.length; i++) {
-    cards += `<div class="contenedorGrande">
+    cards += `<section class="contenedorGrande">
                 <img src="./${books[i].imageLink}" ></img>
-                <div class="contenedorTexto">
+                <article class="contenedorTexto">
                   <p>Author: ${books[i].author}</p>
                   <p>País: ${books[i].country}</p>
                   <p>Enlace: <a href="${books[i].link}">${books[i].link}</a></p>
                   <p>Páginas: ${books[i].pages}</p>
                   <p>Título: ${books[i].title}</p>
                   <p>Año: ${books[i].year}</p>
-                </div>
-              </div>`
+                </article>
+              </section>`
     console.log();
 }
 
-document.querySelector("body").innerHTML += cards;
+document.querySelector("main").innerHTML += cards;
